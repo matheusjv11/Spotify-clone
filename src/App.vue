@@ -1,18 +1,24 @@
 <template>
   <main class="app-grid">
     <Sidebar />
+    <Footer />
   </main>
 </template>
 
 <script>
 import Sidebar from './components/Sidebar/Sidebar.vue'
+import Footer from './components/Footer/Footer.vue'
 
 export default {
-  components: {Sidebar}
+  components: {Sidebar, Footer}
 }
 </script>
 
 <style>
+  html {
+    overflow: unset !important;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     margin: 0px;
