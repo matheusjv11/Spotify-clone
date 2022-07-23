@@ -2,6 +2,7 @@
   <main class="footer">
     <MusicPreview />
     <MusicControl />
+    <div>Teste</div>
   </main>
 </template>
 
@@ -20,6 +21,7 @@ export default {
   background-color: rgb(24, 24, 24);
   border-top: solid 1px rgba(179, 179, 179, 0.1);
   display: flex;
+  justify-content: space-between;
 }
 
 </style>
