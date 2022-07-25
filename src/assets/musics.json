@@ -1,0 +1,14 @@
+{
+    "musics": [
+        {
+            "id": 1,
+            "title": "Teste",
+            "album": "Teste",
+            "duration": "Teste",
+            "created": "12/12/12",
+            "thumbnail": "sss",
+            "file": "sss",
+            "author": "Twenties by Peyruis https://soundcloud.com/peyruis Creative Commons — Attribution 3.0 Unported — CC BY 3.0 Free Download / Stream: https://bit.ly/twenties-peyruis Music promoted by Audio Library https://youtu.be/t9glFROS8-k"
+        }
+    ]
+}

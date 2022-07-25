@@ -1,31 +1,7 @@
 <template>
-  <main>
-      <div class="actions">
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>skip-previous</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>skip-next</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>repeat-variant</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>play-circle</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>pause-circle</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>pause-circle</v-icon>
-            </v-btn>
-      </div>
-      <div class="timeline">
-          <p>1:18</p>
-          <input 
+    <div class="timeline">
+        <p>1:18</p>
+        <input 
             type="range" 
             ref="controlBar"
             name="volume" 
@@ -34,10 +10,9 @@
             @input="updateTimelineColor()"
             @mouseenter="updateTimelineColor()"
             @mouseleave="resetTimelineColor()"
-          >
-          <p>3:28</p>
-      </div>
-  </main>
+        >
+        <p>3:28</p>
+    </div>
 </template>
 
 <script>
@@ -60,13 +35,7 @@ export default {
 }
 </script>
 
-<style scoped>
-  main {
-    display: flex;
-    flex-direction: column;
-    color: rgb(179, 179, 179);
-  }
-
+<style>
   .timeline {
     display: flex;
     gap: 8px;
@@ -120,5 +89,4 @@ export default {
   input[type=range]:hover::-webkit-slider-thumb {
     display: block;
   }
-
 </style>

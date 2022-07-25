@@ -8,7 +8,7 @@
 
 <script>
 import MusicPreview from './MusicPreview.vue'
-import MusicControl from './MusicControl.vue'
+import MusicControl from './MusicControl/MusicControl.vue'
 
 export default {
     components: {MusicPreview, MusicControl}

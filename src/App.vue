@@ -1,6 +1,7 @@
 <template>
   <main class="app-grid">
     <Sidebar />
+    <Main />
     <Footer />
   </main>
 </template>
@@ -8,9 +9,10 @@
 <script>
 import Sidebar from './components/Sidebar/Sidebar.vue'
 import Footer from './components/Footer/Footer.vue'
+import Main from './components/Main/Main.vue'
 
 export default {
-  components: {Sidebar, Footer}
+  components: {Sidebar, Footer, Main}
 }
 </script>
 
@@ -51,5 +53,11 @@ export default {
   p {
     font-size: 14px;
     margin: 0px;
+  }
+
+  .text-left,
+  .theme--light.v-data-table,
+  .normal-text {
+    color: rgb(179, 179, 179) !important;
   }
 </style>
