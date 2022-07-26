@@ -59,7 +59,308 @@ export default {
             thumbnail: {
               src: '/assets/musicImage/black-summer.jpg',
               alt: 'Music cover'
-            }
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                              {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                              {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                              {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                              {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                              {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
+          },
+                    {
+            title: '505',
+            artist: 'Arctic Monkeys',
+            album: 'Favourite Worst Nightmare',
+            added: 'há 7 horas',
+            duration: '4:13',
+            thumbnail: {
+              src: '/assets/musicImage/black-summer.jpg',
+              alt: 'Music cover'
+            },
+
           },
         ],
         }
