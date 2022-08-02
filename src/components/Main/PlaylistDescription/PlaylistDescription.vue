@@ -8,7 +8,7 @@
         </span>
         <div>
            <p class="info"><strong>PLAYLIST</strong></p> 
-           <h1>Nome da Playlist</h1> 
+           <h1>{{ infos.title }}</h1> 
             <p><strong>Matheus Almeida</strong> - 40 songs, 2h 39min</p>
         </div>
     </div>
@@ -16,7 +16,12 @@
 
 <script>
 export default {
-
+    props: {
+        infos: {
+            type: Object,
+            required: true
+        }
+    }
 }
 </script>
 

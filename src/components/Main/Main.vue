@@ -1,8 +1,8 @@
 <template>
   <main class="main">
     <PlaylistHeader />
-    <PlaylistDescription />
-    <Playlist />
+    <PlaylistDescription v-if="currentPlaylistObj" :infos="currentPlaylistObj.infos"/>
+    <Playlist v-if="currentPlaylistObj" :infos="currentPlaylistObj.musics"/>
   </main>
 </template>
 
@@ -11,8 +11,40 @@ import PlaylistHeader from './PlaylistHeader/PlaylistHeader.vue'
 import PlaylistDescription from './PlaylistDescription/PlaylistDescription.vue'
 import Playlist from './Playlist/Playlist.vue'
 
+import PlaylistService from '../../service/playlistService';
+
 export default {
-  components: {PlaylistHeader, Playlist, PlaylistDescription}
+  components: {PlaylistHeader, Playlist, PlaylistDescription},
+  data() {
+    return {
+      currentPlaylistId: '1',
+      currentPlaylistObj: null
+    }
+  },
+  watch:{
+    $route (){
+      this.loadPlaylist();
+    }
+  },
+  methods: {
+    loadPlaylist() {
+      this.updateId();
+      this.updatePlaylist();
+    },
+
+    updatePlaylist() {
+      this.currentPlaylistObj = PlaylistService.get(this.currentPlaylistId);
+    },
+
+    updateId() {
+      const playlistId = this.$route.query.playlist || '1';
+      this.currentPlaylistId = playlistId;
+    },
+
+  },
+  mounted() {
+    this.loadPlaylist();
+  }
 }  
 </script>
 

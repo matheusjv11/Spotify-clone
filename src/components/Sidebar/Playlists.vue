@@ -1,19 +1,27 @@
 <template>
   <main>
       <ul>
-        <PlaylistItem text="Playlist 1"/>
-        <PlaylistItem text="Playlist 1"/>
-        <PlaylistItem text="Playlist 1"/>
-        <PlaylistItem text="Playlist 1"/>
+        <PlaylistItem 
+          v-for="(playlist) in playlists" 
+          :key="playlist[0]"
+          :text="playlist[1].infos.title"
+          :playlistId="playlist[0]"
+        />
       </ul>
   </main>
 </template>
 
 <script>
+import PlaylistService from '../../service/playlistService';
 import PlaylistItem from './PlaylistItem.vue'
 
 export default {
-    components: {PlaylistItem}
+  components: {PlaylistItem},
+  computed: {
+    playlists() {
+      return PlaylistService.list();
+    }
+  }
 }
 </script>
 
