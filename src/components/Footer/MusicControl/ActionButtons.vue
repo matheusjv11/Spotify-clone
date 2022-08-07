@@ -9,26 +9,20 @@
         <v-btn icon>
             <v-icon>mdi-repeat-variant</v-icon>
         </v-btn>
-        <v-btn icon>
+        <v-btn v-if="$store.state.isPlayingMusic" icon @click="$store.dispatch('pauseMusic')">
+            <v-icon >mdi-pause-circle</v-icon>
+        </v-btn>
+        <v-btn v-else icon @click="$store.dispatch('playMusic')">
             <v-icon>mdi-play-circle</v-icon>
         </v-btn>
-        <v-btn icon>
-            <v-icon>mdi-pause-circle</v-icon>
-        </v-btn>
-        <v-btn icon>
-            <v-icon>mdi-fast-forward-15</v-icon>
-        </v-btn>
-        <v-btn icon>
+        <v-btn icon @click="$store.dispatch('goBacKFifteenSeconds')">
             <v-icon>mdi-rewind-15</v-icon>
+        </v-btn>
+        <v-btn icon @click="$store.dispatch('skipFifteenSeconds')">
+            <v-icon>mdi-fast-forward-15</v-icon>
         </v-btn>
     </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style>
   .actions .v-icon.mdi {

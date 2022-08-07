@@ -1,35 +1,52 @@
 <template>
     <div class="timeline">
-        <p>1:18</p>
+        <p>{{ formattedCurrentTime }}</p>
         <input 
             type="range" 
             ref="controlBar"
             name="volume" 
-            min="0" 
-            :max="musicLength"
-            @input="updateTimelineColor()"
+            min="0"
+            :value="rawCurrentTime"
+            :max="rawMusicDuration"
             @mouseenter="updateTimelineColor()"
             @mouseleave="resetTimelineColor()"
         >
-        <p>3:28</p>
+        <p>{{ formattedMusicDuration }}</p>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  data() {
-    return {
-      musicLength: 100
+  computed: {
+    ...mapGetters([
+      'formattedCurrentTime',
+      'formattedMusicDuration',
+      'rawCurrentTime',
+      'rawMusicDuration'
+    ])
+  },
+  watch: {
+    '$store.state.currentTime' : function () {
+      let value = (this.$refs.controlBar.value) / (parseInt(this.$store.state.music.duration)) * 100;
+      this.$refs.controlBar.style.background = 'linear-gradient(to right, white 0%, white ' + value + '%, #5e5e5e ' + value + '%, #5e5e5e 100%)';
     }
   },
   methods: {
     updateTimelineColor() {
-      var value = (this.$refs.controlBar.value) / (this.musicLength) * 100;
+      let value = (this.$refs.controlBar.value) / (parseInt(this.$store.state.music.duration)) * 100;
       this.$refs.controlBar.style.background = 'linear-gradient(to right, #1db954 0%, #1db954 ' + value + '%, #5e5e5e ' + value + '%, #5e5e5e 100%)';
     },
+
     resetTimelineColor() {
-      var value = (this.$refs.controlBar.value) / (this.musicLength) * 100;
+      let value = (this.$refs.controlBar.value) / (parseInt(this.$store.state.music.duration)) * 100;
       this.$refs.controlBar.style.background = 'linear-gradient(to right, white 0%, white ' + value + '%, #5e5e5e ' + value + '%, #5e5e5e 100%)';
+      this.$store.dispatch('changeCurrentTime', this.$refs.controlBar.value);
+    },
+
+    updateCurrentTime() {
+      //this.$store.dispatch('changeCurrentTime', this.$refs.controlBar.value);
     }
   }
 }
@@ -53,7 +70,7 @@ export default {
     margin: 10px 0;
     width: 100%;
     border-radius: 10px;
-    background: linear-gradient(to right, white 0%, white 50%, #5e5e5e 50%, #5e5e5e 100%);
+    background: linear-gradient(to right, white 0%, white 0%, #5e5e5e 0%, #5e5e5e 100%);
     outline: none;
   }
 
@@ -83,7 +100,7 @@ export default {
   }
 
   input[type=range]:hover {
-    background: linear-gradient(to right, #1db954 0%, #1db954 50%, #5e5e5e 50%, #5e5e5e 100%);
+    background: linear-gradient(to right, #1db954 0%, #1db954 0%, #5e5e5e 0%, #5e5e5e 100%);
   }
 
   input[type=range]:hover::-webkit-slider-thumb {
