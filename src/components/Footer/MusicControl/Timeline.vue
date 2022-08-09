@@ -8,8 +8,9 @@
             min="0"
             :value="rawCurrentTime"
             :max="rawMusicDuration"
-            @mouseenter="updateTimelineColor()"
-            @mouseleave="resetTimelineColor()"
+            @change="updateCurrentTime()"
+            @mouseover="timelineMouseOver()"
+            @mouseleave="timelineNoMouse()"
         >
         <p>{{ formattedMusicDuration }}</p>
     </div>
@@ -27,26 +28,48 @@ export default {
       'rawMusicDuration'
     ])
   },
+  data() {
+    return {
+      hover: false,
+      drag: false
+    }
+  },
   watch: {
     '$store.state.currentTime' : function () {
-      let value = (this.$refs.controlBar.value) / (parseInt(this.$store.state.music.duration)) * 100;
-      this.$refs.controlBar.style.background = 'linear-gradient(to right, white 0%, white ' + value + '%, #5e5e5e ' + value + '%, #5e5e5e 100%)';
+      console.log(this.drag);
+
+      if (this.drag) {
+        return;
+      }
+        
+      if (this.hover) {
+        this.timelineMouseOver();
+        return;
+      }
+      
+      this.timelineNoMouse();
+      return;
     }
   },
   methods: {
-    updateTimelineColor() {
+    timelineMouseOver() {
+      this.hover = true;
+
       let value = (this.$refs.controlBar.value) / (parseInt(this.$store.state.music.duration)) * 100;
       this.$refs.controlBar.style.background = 'linear-gradient(to right, #1db954 0%, #1db954 ' + value + '%, #5e5e5e ' + value + '%, #5e5e5e 100%)';
     },
 
-    resetTimelineColor() {
+    timelineNoMouse() {
+      this.hover = false;
+
       let value = (this.$refs.controlBar.value) / (parseInt(this.$store.state.music.duration)) * 100;
       this.$refs.controlBar.style.background = 'linear-gradient(to right, white 0%, white ' + value + '%, #5e5e5e ' + value + '%, #5e5e5e 100%)';
-      this.$store.dispatch('changeCurrentTime', this.$refs.controlBar.value);
     },
 
     updateCurrentTime() {
-      //this.$store.dispatch('changeCurrentTime', this.$refs.controlBar.value);
+      this.$store.dispatch('changeCurrentTime', this.$refs.controlBar.value);
+
+      this.drag = false;
     }
   }
 }
@@ -58,10 +81,13 @@ export default {
     gap: 8px;
     justify-content: center;
     align-items: center;
+
+    width: 300px;
   }
 
   .timeline p {
     font-size: 11px;
+    widows: 22px;
   }
 
   input[type=range] {

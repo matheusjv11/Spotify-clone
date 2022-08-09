@@ -1,18 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import musicTeste from '../assets/musicFiles/1.mp3';
+import demoMusic from '../assets/musicFiles/1.mp3';
 import MusicService from '../service/musicService';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    music: new Audio(musicTeste),
+    music: null,
     currentTime: 0,
     duration: 0,
     isPlayingMusic: false
   },
   mutations: {
+    CREATE_MUSIC(state, payload) {
+      state.music = payload
+    },
     UPDATE_CURRENT_TIME(state, payload) {
       state.currentTime = payload;
     },
@@ -28,6 +31,19 @@ export default new Vuex.Store({
 
   },
   actions: {
+    initMusic(ctx, music) {
+      const newMusic = new Audio(music);
+      ctx.commit('CREATE_MUSIC', newMusic);
+      
+      ctx.state.music.ontimeupdate = () => {
+        ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
+      }
+
+      ctx.state.music.onloadedmetadata = ()=> {
+        ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
+      }
+    },
+
     skipFifteenSeconds(ctx) {
       const currentTime = ctx.state.music.currentTime;
       ctx.commit('UPDATE_MUSIC_CURRENT_TIME', currentTime + 15 );
@@ -39,14 +55,12 @@ export default new Vuex.Store({
     },
 
     playMusic(ctx) {
+      if (ctx.state.music === null) {
+        ctx.dispatch('initMusic', demoMusic);
+      }
+
       ctx.state.music.play();
       ctx.commit('UPDATE_PLAYING_STATUS', true);
-      ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
-
-      // remove it later, is getting really slow
-      setInterval(() => {
-        ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
-      }, 2000);
     },
 
     pauseMusic(ctx) {
