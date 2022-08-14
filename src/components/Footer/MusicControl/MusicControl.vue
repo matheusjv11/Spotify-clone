@@ -7,7 +7,7 @@
 
 <script>
 import ActionButtons from './ActionButtons.vue';
-import Timeline from './Timeline.vue';
+import Timeline from './MusicTimeline.vue';
 
 export default {
   components: {ActionButtons, Timeline},

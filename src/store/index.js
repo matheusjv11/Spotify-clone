@@ -10,6 +10,7 @@ export default new Vuex.Store({
     music: null,
     currentTime: 0,
     duration: 0,
+    volume: 0.5,
     isPlayingMusic: false
   },
   mutations: {
@@ -28,11 +29,14 @@ export default new Vuex.Store({
     UPDATE_PLAYING_STATUS(state, payload) {
       state.isPlayingMusic = payload;
     },
-
+    UPDATE_MUSIC_VOLUME(state, payload) {
+      state.music.volume= payload;
+    }
   },
   actions: {
     initMusic(ctx, music) {
       const newMusic = new Audio(music);
+      
       ctx.commit('CREATE_MUSIC', newMusic);
       
       ctx.state.music.ontimeupdate = () => {
@@ -40,6 +44,10 @@ export default new Vuex.Store({
       }
 
       ctx.state.music.onloadedmetadata = ()=> {
+        ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
+      }
+
+      ctx.state.music.onvolumechange = ()=> {
         ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
       }
     },
@@ -69,8 +77,11 @@ export default new Vuex.Store({
     },
 
     changeCurrentTime(ctx, newTime) {
-      console.log(newTime);
       ctx.commit('UPDATE_MUSIC_CURRENT_TIME', newTime);
+    },
+
+    changeVolume(ctx, newVolume) {
+      ctx.commit('UPDATE_MUSIC_VOLUME', newVolume);
     }
   },
   getters: {
