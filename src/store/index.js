@@ -31,6 +31,9 @@ export default new Vuex.Store({
     },
     UPDATE_MUSIC_VOLUME(state, payload) {
       state.music.volume= payload;
+    },
+    UPDATE_VOLUME(state, payload) {
+      state.volume = payload;
     }
   },
   actions: {
@@ -41,14 +44,16 @@ export default new Vuex.Store({
       
       ctx.state.music.ontimeupdate = () => {
         ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
+        console.log(ctx.state.music.volume)
       }
 
       ctx.state.music.onloadedmetadata = ()=> {
         ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
+        ctx.commit('UPDATE_MUSIC_VOLUME', ctx.state.volume);
       }
 
       ctx.state.music.onvolumechange = ()=> {
-        ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
+        ctx.commit('UPDATE_VOLUME', ctx.state.music.volume);
       }
     },
 
@@ -81,7 +86,7 @@ export default new Vuex.Store({
     },
 
     changeVolume(ctx, newVolume) {
-      ctx.commit('UPDATE_MUSIC_VOLUME', newVolume);
+      ctx.commit('UPDATE_MUSIC_VOLUME', newVolume / 100);
     }
   },
   getters: {
@@ -99,6 +104,10 @@ export default new Vuex.Store({
 
     formattedMusicDuration: function (state) {
       return MusicService.formattedTime(state.duration);
+    },
+
+    formattedVolume: function (state) {
+      return state.volume * 100;
     }
   }
 })

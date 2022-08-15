@@ -60,4 +60,12 @@ export default {
   .normal-text {
     color: rgb(179, 179, 179) !important;
   }
+
+  .v-icon.mdi {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .v-icon.mdi:hover {
+    color: white !important;
+  }
 </style>

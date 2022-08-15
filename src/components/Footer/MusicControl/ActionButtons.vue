@@ -20,13 +20,3 @@
         </v-btn>
     </div>
 </template>
-
-<style>
-  .actions .v-icon.mdi {
-    color: rgba(255, 255, 255, 0.7) !important;
-  }
-
-  .actions .v-icon.mdi:hover {
-    color: white !important;
-  }
-</style>
