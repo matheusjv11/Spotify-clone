@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Timeline from '../../Base/Timeline.vue';
+import Timeline from '@/components/Base/Timeline.vue';
 import { mapGetters } from 'vuex';
 
 export default {

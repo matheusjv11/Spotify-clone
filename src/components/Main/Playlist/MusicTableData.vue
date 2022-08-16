@@ -1,6 +1,6 @@
 <template>
   <td>
-    <img src="../../../assets/musicImage/black-summer.jpg" :alt="thumbnail.alt">
+    <img src="../../../assets/musicImage/1.jpg" :alt="thumbnail.alt">
     <span>
         <p class="title">{{ title }}</p>
         <p>{{ artist }}</p>

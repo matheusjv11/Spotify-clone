@@ -57,7 +57,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -69,7 +69,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -81,7 +81,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -93,7 +93,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -105,7 +105,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -117,7 +117,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -129,7 +129,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -141,7 +141,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -153,7 +153,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -165,7 +165,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -177,7 +177,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -189,7 +189,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -201,7 +201,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -213,7 +213,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -225,7 +225,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -237,7 +237,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -249,7 +249,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -261,7 +261,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -273,7 +273,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -285,7 +285,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -297,7 +297,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -309,7 +309,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -321,7 +321,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -333,7 +333,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -345,7 +345,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 
@@ -357,7 +357,7 @@ export default {
             added: 'há 7 horas',
             duration: '4:13',
             thumbnail: {
-              src: '/assets/musicImage/black-summer.jpg',
+              src: '/assets/musicImage/1.jpg',
               alt: 'Music cover'
             },
 

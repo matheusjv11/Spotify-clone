@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import demoMusic from '../assets/musicFiles/1.mp3';
 import MusicService from '../service/musicService';
 
 Vue.use(Vuex);
@@ -8,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     music: null,
+    musicDescription: null,
     currentTime: 0,
     duration: 0,
     volume: 0.5,
@@ -34,13 +34,17 @@ export default new Vuex.Store({
     },
     UPDATE_VOLUME(state, payload) {
       state.volume = payload;
+    },
+    UPDATE_MUSIC_DESCRIPTION(state, payload) {
+      state.musicDescription = payload;
     }
   },
   actions: {
-    initMusic(ctx, music) {
-      const newMusic = new Audio(music);
+    initMusic(ctx, musicObj) {
+      const newMusic = new Audio(require(`@/assets/musicFiles/${musicObj.id}.mp3`));
       
       ctx.commit('CREATE_MUSIC', newMusic);
+      ctx.commit('UPDATE_MUSIC_DESCRIPTION', musicObj);
       
       ctx.state.music.ontimeupdate = () => {
         ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
@@ -68,10 +72,6 @@ export default new Vuex.Store({
     },
 
     playMusic(ctx) {
-      if (ctx.state.music === null) {
-        ctx.dispatch('initMusic', demoMusic);
-      }
-
       ctx.state.music.play();
       ctx.commit('UPDATE_PLAYING_STATUS', true);
     },

@@ -1,10 +1,10 @@
 <template>
     <div class="playlist-description">
         <span class="cover">
-            <img src="../../../assets/musicImage/black-summer.jpg" alt="">
-            <img src="../../../assets/musicImage/black-summer.jpg" alt="">
-            <img src="../../../assets/musicImage/black-summer.jpg" alt="">
-            <img src="../../../assets/musicImage/black-summer.jpg" alt="">
+            <img src="../../../assets/musicImage/1.jpg" alt="">
+            <img src="../../../assets/musicImage/1.jpg" alt="">
+            <img src="../../../assets/musicImage/1.jpg" alt="">
+            <img src="../../../assets/musicImage/1.jpg" alt="">
         </span>
         <div>
            <p class="info"><strong>PLAYLIST</strong></p> 

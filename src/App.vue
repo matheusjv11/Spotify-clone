@@ -11,8 +11,21 @@ import Sidebar from './components/Sidebar/Sidebar.vue'
 import Footer from './components/Footer/Footer.vue'
 import Main from './components/Main/Main.vue'
 
+const musicObjTeste = {
+  id: '1',
+  title: '505',
+  artist: 'Arctic Monkeys',
+  album: 'Favourite Worst Nightmare',
+  added: 'há 7 horas',
+  duration: '4:13'
+}
+
 export default {
-  components: {Sidebar, Footer, Main}
+  components: {Sidebar, Footer, Main},
+  created() {
+    console.log('passei aqui')
+    this.$store.dispatch('initMusic', musicObjTeste);
+  }
 }
 </script>
 
