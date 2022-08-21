@@ -23,17 +23,26 @@
         </thead>
         <tbody class="normal-text">
             <tr
-            v-for="(music, index) in musics"
-            :key="index"
+              v-for="(music, index) in musics"
+              :key="index"
+              @mouseover="hover = true"
+              @mouseleave="hover = false"
             >
-            <td>{{ index }}</td>
-            <MusicTableData 
+            <td class="index-column">
+              <template v-if="hover">
+                <Play @beenClicked="$store.dispatch('initMusic', {music: music, play: false})"/>
+              </template>
+              <template v-else>
+                {{ index + 1}}
+              </template>
+            </td>
+            <MusicTableData
+              :id="music.id"
               :title="music.title"
-              :artist="music.artist" 
-              :thumbnail="music.thumbnail"
+              :artist="music.author" 
             />
             <td>{{ music.album }}</td>
-            <td>{{ music.added }}</td>
+            <td>{{ music.created }}</td>
             <td>{{ music.duration }}</td>
             </tr>
         </tbody>
@@ -43,328 +52,34 @@
 </template>
 
 <script>
-import MusicTableData from './MusicTableData.vue'
+import MusicTableData from './MusicTableData.vue';
+import Play from '@/components/Base/Play.vue';
+import MusicService  from '@/service/musicService.js';
 
 export default {
-    components: {MusicTableData},
-    data() {
-        return {
-          musics: [
-          {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                              {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                              {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                              {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                              {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                              {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-                    {
-            title: '505',
-            artist: 'Arctic Monkeys',
-            album: 'Favourite Worst Nightmare',
-            added: 'há 7 horas',
-            duration: '4:13',
-            thumbnail: {
-              src: '/assets/musicImage/1.jpg',
-              alt: 'Music cover'
-            },
-
-          },
-        ],
-        }
+  components: {MusicTableData, Play},
+  props: {
+    musicIds: {Array}
+  },
+  data() {
+      return {
+        musics: [],
+        hover: false
+      }
+  },
+  watch:{
+    $route (){
+      this.loadMusics();
     }
+  },
+  methods: {
+    loadMusics() {
+      this.musics = MusicService.list(this.musicIds);
+    }
+  },
+  mounted() {
+    this.loadMusics();
+  }
 }
 </script>
 
@@ -380,5 +95,10 @@ export default {
 
   .theme--light.v-data-table {
     background-color: inherit !important;
+  }
+
+  .index-column {
+    padding: 0px !important;
+    text-align: center;
   }
 </style>

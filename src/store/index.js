@@ -40,11 +40,15 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    initMusic(ctx, musicObj) {
-      const newMusic = new Audio(require(`@/assets/musicFiles/${musicObj.id}.mp3`));
-      
+    initMusic(ctx, actionObj) {
+      if (ctx.state.music && (actionObj.music.id == ctx.state.music.id)) {
+        return;
+      }
+
+      const newMusic = new Audio(require(`@/assets/musicFiles/${actionObj.music.id}.mp3`));
+  
       ctx.commit('CREATE_MUSIC', newMusic);
-      ctx.commit('UPDATE_MUSIC_DESCRIPTION', musicObj);
+      ctx.commit('UPDATE_MUSIC_DESCRIPTION', actionObj.music);
       
       ctx.state.music.ontimeupdate = () => {
         ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
@@ -54,6 +58,10 @@ export default new Vuex.Store({
       ctx.state.music.onloadedmetadata = ()=> {
         ctx.commit('UPDATE_DURATION', ctx.state.music.duration);
         ctx.commit('UPDATE_MUSIC_VOLUME', ctx.state.volume);
+
+        if (actionObj.play) {
+          ctx.dispatch('playMusic');
+        }
       }
 
       ctx.state.music.onvolumechange = ()=> {

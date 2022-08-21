@@ -23,8 +23,10 @@ const musicObjTeste = {
 export default {
   components: {Sidebar, Footer, Main},
   created() {
-    console.log('passei aqui')
-    this.$store.dispatch('initMusic', musicObjTeste);
+    this.$store.dispatch('initMusic', {
+      music: musicObjTeste,
+      play: false
+    });
   }
 }
 </script>

@@ -2,7 +2,7 @@
   <main class="main">
     <PlaylistHeader />
     <PlaylistDescription v-if="currentPlaylistObj" :infos="currentPlaylistObj.infos"/>
-    <Playlist v-if="currentPlaylistObj" :infos="currentPlaylistObj.musics"/>
+    <Playlist v-if="currentPlaylistObj" :musicIds="currentPlaylistObj.musics"/>
   </main>
 </template>
 

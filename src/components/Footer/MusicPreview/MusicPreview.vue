@@ -17,11 +17,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-        music: null
-    }
-  },
+    data() {
+        return {
+            music: null
+        }
+    },
     methods: {
         getCoverImage() {
             const imageName = this.$store.state.musicDescription.id;

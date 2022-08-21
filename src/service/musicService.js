@@ -1,3 +1,4 @@
+import musicsJson from '../assets/musics.json';
 export default class MusicService {
     
     static formattedTime(duration) {
@@ -14,4 +15,13 @@ export default class MusicService {
 
         return minutes + ':' + seconds;
     }
+
+    static list(ids) {
+        let result = musicsJson.musics.filter((music) => {
+            return ids.includes(music.id);
+        });
+
+        return result;
+    }
+
 }

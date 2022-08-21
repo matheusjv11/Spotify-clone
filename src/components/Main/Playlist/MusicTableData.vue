@@ -1,6 +1,6 @@
 <template>
   <td>
-    <img src="../../../assets/musicImage/1.jpg" :alt="thumbnail.alt">
+    <img :src="getImage()" alt="Album cover image">
     <span>
         <p class="title">{{ title }}</p>
         <p>{{ artist }}</p>
@@ -15,8 +15,8 @@ export default {
             type: String,
             required: true
         },
-        thumbnail: {
-            type: Object,
+        id: {
+            type: Number,
             required: true
         },
         artist: {
@@ -24,6 +24,11 @@ export default {
             required: true
         },
     },
+    methods: {
+        getImage() {
+            return require('@/assets/musicImage/'+ this.id +'.jpg');
+        }
+    }
 }
 </script>
 
