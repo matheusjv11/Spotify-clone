@@ -7,7 +7,7 @@
             <v-icon>mdi-skip-previous</v-icon>
         </v-btn>
         <Play :playing="$store.state.isPlayingMusic" />
-        <v-btn icon>
+        <v-btn icon @click="$store.dispatch('nextMusic')">
             <v-icon>mdi-skip-next</v-icon>
         </v-btn>
         <v-btn icon @click="$store.dispatch('skipFifteenSeconds')">

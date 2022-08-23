@@ -4,7 +4,6 @@ import MusicService from '../service/musicService';
 
 Vue.use(Vuex);
 
-//const mainMusic = document.createElement("audio");
 const mainMusic = new Audio();
 
 export default new Vuex.Store({
@@ -48,13 +47,11 @@ export default new Vuex.Store({
         if (actionObj.music.id == ctx.state.musicDescription.id) {
           return;
         }
-
         ctx.state.music;
       }
       
       mainMusic.src = require(`@/assets/musicFiles/${actionObj.music.id}.mp3`);
       mainMusic.load();
-     // const newMusic = new Audio(require(`@/assets/musicFiles/${actionObj.music.id}.mp3`));
   
       ctx.commit('CREATE_MUSIC', mainMusic);
       ctx.commit('UPDATE_MUSIC_DESCRIPTION', actionObj.music);
@@ -97,6 +94,13 @@ export default new Vuex.Store({
     pauseMusic(ctx) {
       ctx.state.music.pause();
       ctx.commit('UPDATE_PLAYING_STATUS', false);
+    },
+
+    nextMusic(ctx) {
+      ctx.dispatch('initMusic', {
+        music: MusicService.getNextMusic(ctx.state.musicDescription.id),
+        play: true
+      });
     },
 
     changeCurrentTime(ctx, newTime) {

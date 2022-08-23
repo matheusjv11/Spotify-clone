@@ -17,33 +17,21 @@ export default {
   components: {PlaylistHeader, Playlist, PlaylistDescription},
   data() {
     return {
-      currentPlaylistId: '1',
       currentPlaylistObj: null
     }
   },
   watch:{
     $route (){
-      this.loadPlaylist();
+      this.updatePlaylist();
     }
   },
   methods: {
-    loadPlaylist() {
-      this.updateId();
-      this.updatePlaylist();
-    },
-
     updatePlaylist() {
-      this.currentPlaylistObj = PlaylistService.get(this.currentPlaylistId);
+      this.currentPlaylistObj = PlaylistService.getCurrent();
     },
-
-    updateId() {
-      const playlistId = this.$route.query.playlist || '1';
-      this.currentPlaylistId = playlistId;
-    },
-
   },
   mounted() {
-    this.loadPlaylist();
+    this.updatePlaylist();
   }
 }  
 </script>

@@ -1,6 +1,7 @@
 import musicsJson from '../assets/musics.json';
+import PlaylistService from './playlistService';
+
 export default class MusicService {
-    
     static formattedTime(duration) {
         const intDuration = parseInt(duration);
 
@@ -16,12 +17,25 @@ export default class MusicService {
         return minutes + ':' + seconds;
     }
 
-    static list(ids) {
-        let result = musicsJson.musics.filter((music) => {
-            return ids.includes(music.id);
-        });
-
-        return result;
+    static get(id) {
+        const result = this.list([id]);
+        return result[0];
     }
 
+    static list(ids) {
+        return musicsJson.musics.filter((music) => {
+            return ids.includes(music.id);
+        });
+    }
+
+    static getNextMusic(current) {
+        const playlist = PlaylistService.getCurrent();
+        const currentIndex = playlist.musics.indexOf(current);
+
+        if (currentIndex == playlist.musics.length - 1) {
+            return this.get(playlist.musics[0]);
+        }
+
+        return this.get(playlist.musics[currentIndex + 1]);
+    }
 }

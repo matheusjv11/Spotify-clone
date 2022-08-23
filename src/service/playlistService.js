@@ -6,11 +6,15 @@ export default class PlaylistService {
         return Object.entries(playlists);
     }
 
-    static get(id) {
+    static loadedId() {
+        return new URL(location.href).searchParams.get('playlist') || '1' ;
+    }
+
+    static getCurrent() {
         const playlistArray = this.list();
         
         let result = playlistArray.filter((playlsit) => {
-            return playlsit[0] === id;
+            return playlsit[0] === this.loadedId();
         });
 
         return this.playlistFromEntrie(result);
