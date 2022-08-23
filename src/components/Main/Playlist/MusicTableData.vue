@@ -2,7 +2,7 @@
   <td>
     <img :src="getImage()" alt="Album cover image">
     <span>
-        <p class="title">{{ title }}</p>
+        <p class="title" :class="{'green-text': isCurrentMusic}">{{ title }}</p>
         <p>{{ artist }}</p>
     </span>
   </td>
@@ -18,6 +18,9 @@ export default {
         id: {
             type: Number,
             required: true
+        },
+        isCurrentMusic: {
+            type: Boolean
         },
         artist: {
             type: String,

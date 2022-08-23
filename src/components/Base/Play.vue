@@ -1,5 +1,5 @@
 <template>
-    <v-btn v-if="$store.state.isPlayingMusic" icon @click="pauseMusic()">
+    <v-btn v-if="playing" icon @click="pauseMusic()">
         <v-icon >mdi-pause-circle</v-icon>
     </v-btn>
     <v-btn v-else icon @click="playMusic()">
@@ -10,13 +10,9 @@
 <script>
 export default {
     props: {
-        currentValue: {
-          type: Number,  
+        playing: {
+          type: Boolean,  
         },
-        maxValue: {
-            type: Number,
-            required: false
-        }
     },
     methods: {
         pauseMusic() {

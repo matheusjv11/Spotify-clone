@@ -2,11 +2,39 @@
     "musics": [
         {
             "id": 1,
-            "title": "Teste",
-            "album": "Teste",
-            "duration": "Teste",
-            "created": "12/12/12",
-            "author": "Song: Syn Cole - Need Ya [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://NCS.io/NeedYa Watch: http://youtu.be/"
+            "title": "Samurai",
+            "album": "NoCopyrightSounds",
+            "duration": "3:20",
+            "created": "Aug 11, 2022",
+            "author": "Jim Yosef",
+            "credits": "Song: Jim Yosef - Samurai [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://NCS.io/Samurai Watch: http://youtu.be/"
+        },
+        {
+            "id": 2,
+            "title": "Bot Fight",
+            "album": "NoCopyrightSounds",
+            "duration": "4:35",
+            "created": "Aug 5, 2022",
+            "author": "Everen Maxwell",
+            "credits": "Song: Everen Maxwell - Bot Fight [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://NCS.io/BotFight Watch: http://youtu.be/"
+        },
+        {
+            "id": 3,
+            "title": "Not Enough",
+            "album": "NoCopyrightSounds",
+            "duration": "4:40",
+            "created": "Jul 26, 2022",
+            "author": "Near x Far",
+            "credits": "Song: Near x Far - Not Enough [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://NCS.io/NotEnough Watch: http://youtu.be/"
+        },
+        {
+            "id": 4,
+            "title": "The Feeling",
+            "album": "NoCopyrightSounds",
+            "duration": "2:28",
+            "created": "Jul 22, 2022",
+            "author": "Paul Flint",
+            "credits": "Song: Near x Far - Not Enough [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://NCS.io/NotEnough Watch: http://youtu.be/"
         }
     ]
 }

@@ -22,29 +22,32 @@
             </tr>
         </thead>
         <tbody class="normal-text">
-            <tr
-              v-for="(music, index) in musics"
-              :key="index"
-              @mouseover="hover = true"
-              @mouseleave="hover = false"
+            <template 
+              v-for="(music, index) in musics" 
             >
-            <td class="index-column">
-              <template v-if="hover">
-                <Play @beenClicked="$store.dispatch('initMusic', {music: music, play: false})"/>
-              </template>
-              <template v-else>
-                {{ index + 1}}
-              </template>
-            </td>
-            <MusicTableData
-              :id="music.id"
-              :title="music.title"
-              :artist="music.author" 
-            />
-            <td>{{ music.album }}</td>
-            <td>{{ music.created }}</td>
-            <td>{{ music.duration }}</td>
-            </tr>
+              <tr 
+                :key="index"
+                @mouseover="hoveredMusic = music.id"
+                @mouseleave="hoveredMusic = null"
+                :set="isCurrentMusic = (music.id == $store.state.musicDescription.id)"
+              >
+                <IndexTableData 
+                  :hovered="hoveredMusic == music.id"
+                  :music="music"
+                  :tableIndex="index + 1"
+                  :isCurrentMusic="isCurrentMusic"
+                />
+                <MusicTableData
+                  :id="music.id"
+                  :title="music.title"
+                  :artist="music.author"
+                  :isCurrentMusic="isCurrentMusic" 
+                />
+                <td>{{ music.album }}</td>
+                <td>{{ music.created }}</td>
+                <td>{{ music.duration }}</td>
+              </tr>
+            </template>
         </tbody>
         </template>
     </v-simple-table>
@@ -52,19 +55,19 @@
 </template>
 
 <script>
-import MusicTableData from './MusicTableData.vue';
-import Play from '@/components/Base/Play.vue';
+import IndexTableData from '@/components/Main/Playlist/IndexTableData.vue';
+import MusicTableData from '@/components/Main/Playlist/MusicTableData.vue';
 import MusicService  from '@/service/musicService.js';
 
 export default {
-  components: {MusicTableData, Play},
+  components: {MusicTableData, IndexTableData},
   props: {
     musicIds: {Array}
   },
   data() {
       return {
         musics: [],
-        hover: false
+        hoveredMusic: false
       }
   },
   watch:{
@@ -75,7 +78,7 @@ export default {
   methods: {
     loadMusics() {
       this.musics = MusicService.list(this.musicIds);
-    }
+    },
   },
   mounted() {
     this.loadMusics();
@@ -101,4 +104,9 @@ export default {
     padding: 0px !important;
     text-align: center;
   }
+
+  .green-text {
+    color: #1db954 !important;
+  }
+
 </style>

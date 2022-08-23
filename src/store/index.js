@@ -4,6 +4,9 @@ import MusicService from '../service/musicService';
 
 Vue.use(Vuex);
 
+//const mainMusic = document.createElement("audio");
+const mainMusic = new Audio();
+
 export default new Vuex.Store({
   state: {
     music: null,
@@ -41,18 +44,23 @@ export default new Vuex.Store({
   },
   actions: {
     initMusic(ctx, actionObj) {
-      if (ctx.state.music && (actionObj.music.id == ctx.state.music.id)) {
-        return;
-      }
+      if (ctx.state.musicDescription) {
+        if (actionObj.music.id == ctx.state.musicDescription.id) {
+          return;
+        }
 
-      const newMusic = new Audio(require(`@/assets/musicFiles/${actionObj.music.id}.mp3`));
+        ctx.state.music;
+      }
+      
+      mainMusic.src = require(`@/assets/musicFiles/${actionObj.music.id}.mp3`);
+      mainMusic.load();
+     // const newMusic = new Audio(require(`@/assets/musicFiles/${actionObj.music.id}.mp3`));
   
-      ctx.commit('CREATE_MUSIC', newMusic);
+      ctx.commit('CREATE_MUSIC', mainMusic);
       ctx.commit('UPDATE_MUSIC_DESCRIPTION', actionObj.music);
       
       ctx.state.music.ontimeupdate = () => {
         ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
-        console.log(ctx.state.music.volume)
       }
 
       ctx.state.music.onloadedmetadata = ()=> {
@@ -80,8 +88,10 @@ export default new Vuex.Store({
     },
 
     playMusic(ctx) {
-      ctx.state.music.play();
-      ctx.commit('UPDATE_PLAYING_STATUS', true);
+      if (ctx.state.music) {
+        ctx.state.music.play();
+        ctx.commit('UPDATE_PLAYING_STATUS', true);
+      }
     },
 
     pauseMusic(ctx) {

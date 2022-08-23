@@ -11,20 +11,22 @@ import Sidebar from './components/Sidebar/Sidebar.vue'
 import Footer from './components/Footer/Footer.vue'
 import Main from './components/Main/Main.vue'
 
-const musicObjTeste = {
-  id: '1',
-  title: '505',
-  artist: 'Arctic Monkeys',
-  album: 'Favourite Worst Nightmare',
-  added: 'há 7 horas',
-  duration: '4:13'
-}
+
+const musicTeste =         {
+            "id": 1,
+            "title": "Samurai",
+            "album": "NoCopyrightSounds",
+            "duration": "3:20",
+            "created": "Aug 11, 2022",
+            "author": "Jim Yosef",
+            "credits": "Song: Jim Yosef - Samurai [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://NCS.io/Samurai Watch: http://youtu.be/"
+        };
 
 export default {
   components: {Sidebar, Footer, Main},
   created() {
     this.$store.dispatch('initMusic', {
-      music: musicObjTeste,
+      music: musicTeste,
       play: false
     });
   }
