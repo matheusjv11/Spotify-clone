@@ -46,6 +46,7 @@ export default {
         text-decoration: none;
         color: white;
         height: 100%;
+        cursor: default;
     }
 
     .menuImage {

@@ -16,8 +16,8 @@
               <th class="text-left">
                   DATE ADDED 
               </th>
-              <th class="text-left">
-                  O
+              <th class="text-right">
+                <v-icon>mdi-clock-time-four-outline</v-icon>
               </th>
             </tr>
         </thead>
@@ -45,7 +45,7 @@
                 />
                 <td>{{ music.album }}</td>
                 <td>{{ music.created }}</td>
-                <td>{{ music.duration }}</td>
+                <td class="text-right">{{ music.duration }}</td>
               </tr>
             </template>
         </tbody>
@@ -89,6 +89,7 @@ export default {
 <style lang="css">
   .v-data-table tr:not(.table-header):hover {
     background-color: #2a2a2a !important;
+    border-radius: 4px !important;
   }
 
   .text-left {
@@ -96,17 +97,35 @@ export default {
     font-weight: 400;
   }
 
+  .text-right {
+    text-align: right;
+    font-weight: 400;
+  }
+
   .theme--light.v-data-table {
     background-color: inherit !important;
+    padding: 0px 46px;
   }
 
   .index-column {
     padding: 0px !important;
     text-align: center;
+    width: 1px;
   }
 
   .green-text {
     color: #1db954 !important;
   }
 
+  .text-left .v-icon.mdi:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .mdi-clock-time-four-outline::before {
+    font-size: 16px !important;
+  }
+
+  tr {
+    height: 56px;
+  }
 </style>

@@ -39,6 +39,9 @@ export default {
     td {
         display: flex;
         gap: 16px;
+        align-items: center !important;
+        border: none !important;
+        padding-top: 6px !important;
     }
 
     .title {

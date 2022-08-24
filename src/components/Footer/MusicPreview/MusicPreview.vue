@@ -1,32 +1,21 @@
 <template>
   <main v-if="$store.state.musicDescription">
-      <div class="cover-image" :style="{'background-image': getCoverImage()}">
-          <button>
-              <img src="@/assets/icons/arrow-up.png" alt="album cover image">
-          </button>
-      </div>
-
-      <div class="music box">
+    <img :src="getImage()" alt="Album cover image">
+    <div class="music box">
         <div>
             <h5 class="title">{{ $store.state.musicDescription.title }}</h5>
-            <p class="subtitle">{{ $store.state.musicDescription.artist }}</p>
+            <p class="subtitle">{{ $store.state.musicDescription.author }}</p>
         </div>
-      </div>
+    </div>
   </main>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            music: null
-        }
-    },
     methods: {
-        getCoverImage() {
+        getImage() {
             const imageName = this.$store.state.musicDescription.id;
-
-            return `url(${require('@/assets/musicImage/'+ imageName +'.jpg')})`;
+            return require('@/assets/musicImage/'+ imageName +'.jpg');
         }
     }
 }
@@ -39,8 +28,9 @@ export default {
         width: 241px;
         height: 100%;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding-left: 16px;
+        gap: 14px;
     }
 
     .music.box {
@@ -83,7 +73,8 @@ export default {
         padding: 4px;
     }
 
-    svg {
-        filter: invert(0.6);
+    img {
+        height: 56px;
+        widows: 56px;
     }
 </style>

@@ -96,6 +96,25 @@ export default new Vuex.Store({
       ctx.commit('UPDATE_PLAYING_STATUS', false);
     },
 
+    resetMusic(ctx) {
+      ctx.commit('UPDATE_MUSIC_CURRENT_TIME', 0); 
+    },
+ 
+    previousMusic(ctx) {
+      const previous = MusicService.getPrevioustMusic(ctx.state.musicDescription.id);
+
+      if (previous && ctx.state.currentTime <= 5) {
+        ctx.dispatch('initMusic', {
+          music: previous,
+          play: true
+        });
+
+        return;
+      }
+
+      ctx.dispatch('resetMusic');
+    },
+
     nextMusic(ctx) {
       ctx.dispatch('initMusic', {
         music: MusicService.getNextMusic(ctx.state.musicDescription.id),

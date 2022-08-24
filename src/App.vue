@@ -85,4 +85,9 @@ export default {
   .v-icon.mdi:hover {
     color: white !important;
   }
+
+  .theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr:last-child > th {
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+    padding-top: 12px;
+  }
 </style>

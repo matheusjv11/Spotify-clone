@@ -38,4 +38,15 @@ export default class MusicService {
 
         return this.get(playlist.musics[currentIndex + 1]);
     }
+
+    static getPrevioustMusic(current) {
+        const playlist = PlaylistService.getCurrent();
+        const currentIndex = playlist.musics.indexOf(current);
+
+        if (currentIndex == 0) {
+            return null;
+        }
+
+        return this.get(playlist.musics[currentIndex - 1]);
+    }
 }

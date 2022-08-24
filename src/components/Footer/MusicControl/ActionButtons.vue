@@ -3,7 +3,7 @@
         <v-btn icon @click="$store.dispatch('goBacKFifteenSeconds')">
             <v-icon>mdi-rewind-15</v-icon>
         </v-btn>
-        <v-btn icon>
+        <v-btn icon  @click="$store.dispatch('previousMusic')">
             <v-icon>mdi-skip-previous</v-icon>
         </v-btn>
         <Play :playing="$store.state.isPlayingMusic" />
