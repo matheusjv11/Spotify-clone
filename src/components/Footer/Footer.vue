@@ -23,6 +23,14 @@ export default {
   border-top: solid 1px rgba(179, 179, 179, 0.1);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 0px 4px;
+  }
 }
 
 </style>

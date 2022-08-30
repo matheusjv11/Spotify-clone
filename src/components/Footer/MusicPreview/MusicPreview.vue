@@ -25,11 +25,10 @@ export default {
 
     main {
         display: flex;
-        width: 241px;
+        width: 30%;
         height: 100%;
         align-items: center;
         justify-content: flex-start;
-        padding-left: 16px;
         gap: 14px;
     }
 
@@ -75,6 +74,21 @@ export default {
 
     img {
         height: 56px;
-        widows: 56px;
+        width: 56px;
+    }
+
+    @media screen and (max-width: 600px) {
+        img {
+            height: 30px;
+            width: 30px;
+        }
+
+        .music .title {
+            font-size: 12px;
+        }
+
+        .music .subtitle{
+            font-size: 9px;
+        }
     }
 </style>

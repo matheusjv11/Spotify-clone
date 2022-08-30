@@ -5,6 +5,7 @@
             <v-icon v-else>mdi-volume-medium</v-icon>
         </v-btn>
         <Timeline
+          class="timeline"
           ref="musicVolume"
           :currentValue="50"
           :maxValue="100"
@@ -71,7 +72,17 @@ export default {
   .music-volume {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-right: 15px;
+    justify-content: flex-end;
+    width: 30%;
+  }
+
+  .music-volume .timeline {
+    max-width: 93px;
+  }
+
+  @media screen and (max-width: 600px) {
+      .music-volume .timeline {
+        max-width: 63px;
+      }
   }
 </style>

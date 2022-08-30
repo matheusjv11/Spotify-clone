@@ -51,7 +51,7 @@ export default {
 
     .menuImage {
         height: 24px;
-        widows: 24px;
+        width: 24px;
     }
 
     .menuLink p {

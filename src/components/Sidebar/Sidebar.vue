@@ -32,4 +32,10 @@ export default {
         min-height: 1px;
         margin-right: 30px;
     }
+
+    @media screen and (max-width: 600px) {
+        .sidebar {
+            display: none;
+        }
+    }
 </style>

@@ -19,5 +19,7 @@ export default {
     display: flex;
     flex-direction: column;
     color: rgb(179, 179, 179);
+    max-width: 722px;
+    width: 40%;
   }
 </style>

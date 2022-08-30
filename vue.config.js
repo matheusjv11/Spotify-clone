@@ -11,5 +11,9 @@ module.exports = {
       },
       extensions: ['.js', '.vue', '.json']
     }
+  },
+  devServer: {
+    port: 80,
+    host: '0.0.0.0'
   }
 }

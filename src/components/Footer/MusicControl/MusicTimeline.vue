@@ -73,8 +73,7 @@ export default {
     gap: 8px;
     justify-content: center;
     align-items: center;
-
-    width: 300px;
+    width: 100%;
   }
 
   .music-timeline p {
