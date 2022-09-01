@@ -12,6 +12,7 @@ export default {
 
 <style scoped>
     .logo {
+        display: none;
         padding-top: 24px;
     }
 </style>

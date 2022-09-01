@@ -1,8 +1,8 @@
 {
     "1": {
         "infos": {
-            "title": "PlayList 1",
-            "description": "Description 1"
+            "title": "Favorites",
+            "img": 1
         },
         "musics": [
             1,
@@ -12,8 +12,8 @@
     },
     "2": {
         "infos": {
-            "title": "PlayList 2",
-            "description": "Description 2"
+            "title": "To Study",
+            "img": 4
         },
         "musics": [
             4,

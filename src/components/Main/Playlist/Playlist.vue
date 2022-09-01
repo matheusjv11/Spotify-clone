@@ -128,4 +128,11 @@ export default {
   tr {
     height: 56px;
   }
+
+  @media screen and (max-width: 600px) {
+    .v-data-table th:nth-child(3), th:nth-child(4), th:nth-child(5), th:nth-child(6),
+    .v-data-table td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6) {
+      display: none;
+    }
+  }
 </style>

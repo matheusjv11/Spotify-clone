@@ -1,20 +1,18 @@
 <template>
   <main class="main">
-    <PlaylistHeader />
-    <PlaylistDescription v-if="currentPlaylistObj" :infos="currentPlaylistObj.infos"/>
+    <PlaylistDescription v-if="currentPlaylistObj" :playlist="currentPlaylistObj"/>
     <Playlist v-if="currentPlaylistObj" :musicIds="currentPlaylistObj.musics"/>
   </main>
 </template>
 
 <script>
-import PlaylistHeader from './PlaylistHeader/PlaylistHeader.vue'
 import PlaylistDescription from './PlaylistDescription/PlaylistDescription.vue'
 import Playlist from './Playlist/Playlist.vue'
 
 import PlaylistService from '../../service/playlistService';
 
 export default {
-  components: {PlaylistHeader, Playlist, PlaylistDescription},
+  components: {Playlist, PlaylistDescription},
   data() {
     return {
       currentPlaylistObj: null

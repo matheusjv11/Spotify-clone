@@ -1,15 +1,10 @@
 <template>
     <div class="playlist-description">
-        <span class="cover">
-            <img src="../../../assets/musicImage/1.jpg" alt="">
-            <img src="../../../assets/musicImage/1.jpg" alt="">
-            <img src="../../../assets/musicImage/1.jpg" alt="">
-            <img src="../../../assets/musicImage/1.jpg" alt="">
-        </span>
+        <img :src="getImage()" alt="">
         <div>
            <p class="info"><strong>PLAYLIST</strong></p> 
-           <h1>{{ infos.title }}</h1> 
-            <p><strong>Matheus Almeida</strong> - 40 songs, 2h 39min</p>
+           <h1>{{ playlist.infos.title }}</h1> 
+            <p><strong>Matheus Almeida</strong> - {{ playlist.musics.length }} songs</p>
         </div>
     </div>
 </template>
@@ -17,9 +12,15 @@
 <script>
 export default {
     props: {
-        infos: {
+        playlist: {
             type: Object,
             required: true
+        }
+    },
+    methods: {
+        getImage() {
+            const imageName = this.playlist.infos.img;
+            return require('@/assets/musicImage/'+ imageName +'.jpg');
         }
     }
 }
@@ -29,15 +30,9 @@ export default {
     .playlist-description {
         height: 340px;
         width: 100%;
-  background-image: linear-gradient(
-    rgba(191, 122, 48, 1) 0%,
-    rgba(191, 122, 48, 0.3) 50%,
-    rgba(191, 122, 48,  0.3) 45%,
-    rgba(191, 122, 48,  0.3) 40%,
-    rgba(191, 122, 48,  0.3) 35%,
-    rgba(191, 122, 48,  0.3) 30%,
-    rgba(191, 122, 48,  0.3) 25%
-  );
+        background: #ad5389;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         display: flex;
         align-items: flex-end;
         padding: 24px 32px;
@@ -53,8 +48,8 @@ export default {
     }
 
     img {
-        width: 116px;
-        height: 116px;
+        width: 232px;
+        height: 232px;
     }
 
     h1 {
@@ -64,5 +59,21 @@ export default {
 
     .info {
         font-size: 12px;
+    }
+
+    @media screen and (max-width: 600px) {
+        img {
+            width: 108px;
+            height: 108px;
+        }
+
+        h1 {
+            font-size: 64px;
+        }
+
+        .playlist-description {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 </style>
