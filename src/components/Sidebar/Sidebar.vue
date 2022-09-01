@@ -4,7 +4,9 @@
         <Menu />
         <PlaylistManager />
         <hr>
-        <Playlists />
+        <Playlists style="flex-grow: 1;" />
+        <hr>
+        <Credits />
   </main>
 </template>
 
@@ -13,9 +15,16 @@ import Logo from './Logo.vue'
 import Menu from './Menu.vue'
 import PlaylistManager from './PlaylistManager.vue'
 import Playlists from './Playlists.vue'
+import Credits from './Credits.vue'
 
 export default {
-    components: {Logo, Menu, PlaylistManager, Playlists}
+    components: {
+        Logo, 
+        Menu, 
+        PlaylistManager, 
+        Playlists,
+        Credits
+    }
 }
 </script>
 
@@ -23,6 +32,8 @@ export default {
     .sidebar {
         background-color: black;
         padding-left: 24px;
+        display: flex;
+        flex-direction: column;
     }
 
     hr {
