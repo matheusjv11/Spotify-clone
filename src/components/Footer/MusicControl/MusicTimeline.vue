@@ -1,21 +1,22 @@
 <template>
     <div class="music-timeline">
-        <p>{{ formattedCurrentTime }}</p>
+        <p>{{ formattedCurrentTime() }}</p>
         <Timeline
           ref="musicTimeline"
-          :currentValue="currentTimelineValue"
-          :maxValue="rawMusicDuration"
-          @timelineChange="updateCurrentTime()"
+          :currentValue="parseInt($store.state.currentTime)"
+          :maxValue="parseInt($store.state.duration)"
+          @timelineChange="enableSound()"
           @timelineMouseover="hover = true"
           @timelineMouseleave="hover = false"
           @timelineIinput="draggingControl()"
         />
-        <p>{{ formattedMusicDuration }}</p>
+        <p >{{ formattedMusicDuration }}</p>
     </div>
 </template>
 
 <script>
 import Timeline from '@/components/Base/Timeline.vue';
+import MusicService from '@/service/musicService.js';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -24,45 +25,36 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'formattedCurrentTime',
       'formattedMusicDuration',
-      'rawCurrentTime',
-      'rawMusicDuration'
     ]),
-    currentTimelineValue() {
-      if (this.drag) {
-        return;
-      }
 
-      return this.$store.state.currentTime;
-    }
   },
   data() {
     return {
       hover: false,
-      drag: false
+      musicTime: 0
     }
   },
   watch: {
     '$store.state.currentTime' : function () {
-      if (this.hover) {
+      if(this.hover) {
         this.$refs.musicTimeline.mouseOver();
-        return;
+      } else {
+        this.$refs.musicTimeline.noMouse();
       }
-      
-      this.$refs.musicTimeline.noMouse();
-      return;
     },
   },
   methods: {
-    updateCurrentTime() {
-      this.$store.dispatch('changeCurrentTime', this.$refs.musicTimeline.$el.value);
-      this.drag = false;
+    formattedCurrentTime () {
+     return MusicService.formattedTime(this.$refs.musicTimeline?.$el.value);
     },
-    
+    enableSound() {
+      this.$store.dispatch('changeVolume', document.getElementsByName('musicVolume')[0].value);
+    },
     draggingControl() {
-      this.drag = true;
-    }
+      this.$store.dispatch('changeVolume', 0);
+      this.$store.dispatch('changeCurrentTime', this.$refs.musicTimeline.$el.value);
+    },
   }
 }
 </script>

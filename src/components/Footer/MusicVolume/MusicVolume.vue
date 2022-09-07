@@ -7,6 +7,7 @@
         <Timeline
           class="timeline"
           ref="musicVolume"
+          timelineName="musicVolume"
           :currentValue="50"
           :maxValue="100"
           @timelineIinput="updateVolume()"

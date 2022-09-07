@@ -58,6 +58,10 @@ export default new Vuex.Store({
       
       ctx.state.music.ontimeupdate = () => {
         ctx.commit('UPDATE_CURRENT_TIME', ctx.state.music.currentTime);
+        
+        if (ctx.state.music.currentTime === ctx.state.music.duration) {
+          ctx.dispatch('nextMusic');
+        }
       }
 
       ctx.state.music.onloadedmetadata = ()=> {
@@ -131,18 +135,6 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    rawCurrentTime: function (state) {
-      return state.currentTime;
-    },
-
-    formattedCurrentTime: function (state) {
-      return MusicService.formattedTime(state.currentTime);
-    },
-
-    rawMusicDuration: function (state) {
-      return state.duration;
-    },
-
     formattedMusicDuration: function (state) {
       return MusicService.formattedTime(state.duration);
     },

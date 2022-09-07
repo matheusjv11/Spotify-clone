@@ -2,7 +2,7 @@
     <input
         ref="timeline"
         type="range" 
-        name="control" 
+        :name="timelineName" 
         min="0"
         :value="currentValue"
         :max="maxValue"
@@ -22,6 +22,10 @@ export default {
         maxValue: {
             type: Number,
             required: true
+        },
+        timelineName: {
+          type: String,
+          default: 'control' 
         }
     },
     methods: {
